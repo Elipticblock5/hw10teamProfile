@@ -38,3 +38,27 @@ function appendMember() {
     name: "email",
 }])
 
+.then(function({name, role, id, email}) {
+    let roleAnswer = "";
+    if (role === "Engineer") {
+        roleAnswer = "GitHub username"
+    } else if (role === "Intern") {
+        roleAnswer = "school name";
+    } else {
+        roleAnswer = "office phone";
+    }
+}
+inquirer.prompt([{
+    message: `Enter member's $(roleAnswer)`,
+    name: "roleAnswer"
+},
+{
+    type: "list",
+    message: "would you like to add another?",
+    choices: [
+        "yes",
+        "no"
+    ],
+    name: "extraMembers"
+}])
+)
