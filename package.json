@@ -1,0 +1,27 @@
+{
+  "name": "hw10teamprofile",
+  "version": "1.0.0",
+  "description": "command-line application that takes in information about employees on a software engineering team and generates an HTML for each person.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Elipticblock5/hw10teamProfile.git"
+  },
+  "keywords": [
+    "object"
+  ],
+  "author": "Elipticblock5",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Elipticblock5/hw10teamProfile/issues"
+  },
+  "homepage": "https://github.com/Elipticblock5/hw10teamProfile#readme",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

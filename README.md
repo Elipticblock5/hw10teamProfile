@@ -6,7 +6,7 @@ Unit 10 homework
   [![license](https://img.shields.io/badge/license-ISC-yellow)](https://shields.io)
 
 ## Description
-A command-line application that takes in information about employees on a software engineering team and generates an HTML webpage that displays summaries for each person.
+A command line app that takes user input about team and creates dynamic HTML page. 
 
 ## Table of Contents
   * [Installation](#Installation)
@@ -30,6 +30,8 @@ ISC
 
 ### Tests
 Provide instructions for running tests:
+
+
 
 ## Questions
 * For questions, please reach out to me at nbjohnson@gmail.com
