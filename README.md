@@ -18,15 +18,29 @@ A command line app that takes user input about team and creates dynamic HTML pag
 
 ## Table of Contents
   * [Installation](#Installation)
+
+  Must use inquirer npm package
+
   * [Usage](#Usage)
+
+  run npm i, then node index.js from terminal
 
   * [License](#License)
 
+  ISC
+
   * [Contributing](#Contributing)
+
+  Fork repo
 
   * [Tests](#Tests)
 
+  use npm run test
+
   * [Questions](#Questions)
+
+  Contact me below. 
+  
 ## Installation
 What are the steps required to install your project?
 Steps as needed
