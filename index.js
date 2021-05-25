@@ -1,7 +1,171 @@
+const fs = require("fs");
 const inquirer = require('inquirer');
-const generatePage = require('./src/page-template');
+const Engineer = require("./lib/Engineer");
+const Manager = require("./lib/Manager");
+const Intern = require("./lib/Intern");
+const makePage = require("./lib/renderpage");
+const path = require("path");
+const Emp = []
 
-const promptUser = () => {
+const OUTPUT_DIR = path.resolve(__dirname, "output");
+const pathOutPut = path.join(OUTPUT_DIR, "testoutput.html");
+
+
+
+
+
+
+
+//Prompting questions for managers name, employee ID, email, office number
+
+function managerPrompts() {
+  inquirer.prompt([
+    {
+      type: "input",
+      message: "What is the manager's name?",
+      name: "name"
+    },
+
+    {
+      type: "input",
+      message: "Enter the manager's employee ID?",
+      name: "id"
+    },
+
+    {
+      type: "input",
+      message: "what it the manager's email address?",
+      name: "email"
+    },
+
+    {
+      type: "input",
+      message: "what is the manager's office number?",
+      name: "office"
+    }
+
+
+  ])
+
+  .then(function (response) {
+    console.log(response)
+    emp.push(new Manager(response.name, response.id, response.email, response.office))
+    displayTheTeam();
+  });
+}
+
+function displayTheTeam() {
+  inquirer.prompt([
+    {
+      type: "checkbox",
+      message: "Who do you need to add to your team?",
+      name: "team",
+      choices: ["Engineer", "Intern", "I'm done building the team"]
+    }
+  ])
+
+
+  .then(function (response) {
+    console.log(response)
+    if (response.team[0] === "Engineer") {
+      console.log("make and engineer")
+
+      engineer();
+    } else if (response.team[0] === "Intern") {
+      console.log("build intern")
+      Intern();
+    } else {
+      console.log("arll done writing team")
+      fs.writeFile(pathOutPut, makePage(emp), function (err) {
+        if (err) {
+          return
+        } else
+        console.log("new team written")
+      })
+    }
+  })
+
+  .catch(function (err) {
+    console.log(err);
+  })
+}
+
+
+
+
+
+
+function engineer() {
+  inquirer.prompt9([
+    {
+      type: "input",
+      message: "what is the Engineer's name?",
+      name: "name"
+    },
+
+    {
+      type: "input",
+      message: "What is teh Engineer's meail address?",
+      name: "email"
+    },
+
+    {
+      type: "input",
+      message: "What is the Eingeer's Employee ID?",
+      name: "id"
+    },
+
+    {
+      type: "input",
+      message: "Enter the engineer's GitHub User info?",
+      name: "github"
+    }
+  ])
+
+
+  .then(function (response) {
+    emp.push(new Engineer(response.name, response.email, respose.id, response.githug))
+  })
+}
+
+function intern() {
+  inquirer.prompt([
+    {
+      type: "input",
+      message: "What is teh intern's name?",
+      name: "name"
+    },
+
+    {
+      type: "input",
+      message: "What is the intern's ID number",
+      name: "id"
+    },
+
+    {
+      type: "input",
+      message: "what's the intern's email address?",
+      name: "email"
+    },
+
+    {
+      type: "input",
+      message: "What is the intners college name?",
+      name: "school"
+    }
+  ])
+
+  .then(function (response) {
+    emp.push(new Intern(reponse.name, reponse.id, response.email, reponse.school))
+    displayTheTeam();
+  });
+}
+
+managerPrompts();
+
+//const generatePage = require('./src/page-template');
+
+/* const promptUser = () => {
   return inquirer.prompt([
     {
       type: 'input',
@@ -144,7 +308,9 @@ promptUser()
   })
   .catch(err => {
     console.log(err);
-  }); 
+  });   
+
+  */
 
 
 
