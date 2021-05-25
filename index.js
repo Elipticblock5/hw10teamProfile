@@ -1,12 +1,22 @@
+//setting package requirements.
+
+
 const fs = require("fs");
 const inquirer = require('inquirer');
+
+//setting contstants from libarary
+
 const Engineer = require("./lib/Engineer");
 const Manager = require("./lib/Manager");
 const Intern = require("./lib/Intern");
+
+//functions and path
 const makePage = require("./lib/renderpage");
 const path = require("path");
-const Emp = []
+const emp = []
 
+
+//this will be the output path
 const OUTPUT_DIR = path.resolve(__dirname, "output");
 const pathOutPut = path.join(OUTPUT_DIR, "testoutput.html");
 
@@ -17,6 +27,7 @@ const pathOutPut = path.join(OUTPUT_DIR, "testoutput.html");
 
 
 //Prompting questions for managers name, employee ID, email, office number
+//function to begin propmts
 
 function managerPrompts() {
   inquirer.prompt([
@@ -46,13 +57,16 @@ function managerPrompts() {
 
 
   ])
-
-  .then(function (response) {
+ //promise
+   .then(function (response) {
     console.log(response)
     emp.push(new Manager(response.name, response.id, response.email, response.office))
     displayTheTeam();
   });
 }
+
+
+//function to display team. 
 
 function displayTheTeam() {
   inquirer.prompt([
@@ -64,6 +78,7 @@ function displayTheTeam() {
     }
   ])
 
+// if/thens to buld team member additions
 
   .then(function (response) {
     console.log(response)
@@ -93,7 +108,7 @@ function displayTheTeam() {
 
 
 
-
+//engineer inquirers promppts
 
 function engineer() {
   inquirer.prompt9([
@@ -122,11 +137,14 @@ function engineer() {
     }
   ])
 
-
+//promise for engineer
   .then(function (response) {
     emp.push(new Engineer(response.name, response.email, respose.id, response.githug))
   })
 }
+
+//intern function prompt questions
+
 
 function intern() {
   inquirer.prompt([
@@ -161,7 +179,15 @@ function intern() {
   });
 }
 
+//function call
+
 managerPrompts();
+
+//old code from prior project below, used as template for new inquirer propmts
+//all code below ignored, used as template for project.
+
+
+
 
 //const generatePage = require('./src/page-template');
 
@@ -207,15 +233,6 @@ managerPrompts();
     }
   ]);
 };
-
-const promptProject = portfolioData => {
-  console.log(`
-=================
-Add a New Project
-=================
-`);
-
-  // creates a project array if there sin't one. 
 
 
   if (!portfolioData.projects) {
