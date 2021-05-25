@@ -15,6 +15,6 @@ test("Can do the office number using a  constructor argument", () => {
   
   test("Can obtain number using getOffice()", () => {
     const testValue = 200;
-    const e = new Manager("NateManger", 1, "test@test.com", testValue);
+    const e = new Manager("NateManager", 1, "test@test.com", testValue);
     expect(e.getOfficeNumber()).toBe(testValue);
   });
