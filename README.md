@@ -1,6 +1,14 @@
 # hw10teamProfile
 Unit 10 homework
 
+# Walk-through videos
+[Video1](https://www.youtube.com/watch?v=AGNDuWtJGZE)
+[Video2](https://www.youtube.com/watch?v=Dz_9apFyBLY)
+
+# GitHub Repo
+
+[GitHub](https://github.com/Elipticblock5/hw10teamProfile)
+
 # TeamProfileGenerator
 ## Licensing:
   [![license](https://img.shields.io/badge/license-ISC-yellow)](https://shields.io)
@@ -29,7 +37,7 @@ ISC
 ### Contributing
 
 ### Tests
-Provide instructions for running tests:
+Provide instructions for running tests: use npm run test
 
 
 
