@@ -139,7 +139,7 @@ function engineer() {
 
 //promise for engineer
   .then(function (response) {
-    emp.push(new Engineer(response.name, response.email, respose.id, response.githug))
+    emp.push(new Engineer(response.name, response.email, respose.id, response.github))
   })
 }
 
