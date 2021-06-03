@@ -17,6 +17,7 @@ const emp = []
 
 
 //this will be the output path
+//worked with AskBCS for pathing rework
 const OUTPUT_DIR = path.resolve(__dirname, "output");
 const pathOutPut = path.join(OUTPUT_DIR, "testoutput.html");
 
@@ -90,7 +91,10 @@ function displayTheTeam() {
       console.log("build intern")
       Intern();
     } else {
-      console.log("arll done writing team")
+      console.log("all done writing team") //type correctoin
+      if (!fs.existsSync(OUTPUT_DIR)) {
+          fs.mkdirSync(OUTPUT_DIR)
+       }
       fs.writeFile(pathOutPut, makePage(emp), function (err) {
         if (err) {
           return
@@ -150,7 +154,7 @@ function intern() {
   inquirer.prompt([
     {
       type: "input",
-      message: "What is teh intern's name?",
+      message: "What is the intern's name?", //typo fix
       name: "name"
     },
 
