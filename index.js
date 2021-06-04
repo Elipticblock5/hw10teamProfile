@@ -17,7 +17,7 @@ const emp = []
 
 
 //this will be the output path
-const OUTPUT_DIR = path.resolve(__dirname, "output");
+const OUTPUT_DIR = path.resolve(__dirname, "htmloutputs");
 const pathOutPut = path.join(OUTPUT_DIR, "testoutput.html");
 
 
@@ -74,7 +74,7 @@ function displayTheTeam() {
       type: "checkbox",
       message: "Who do you need to add to your team?",
       name: "team",
-      choices: ["Engineer", "Intern", "I'm done building the team"]
+      choices: ["Engineer", "Intern", "Manager", "I'm done building the team"]
     }
   ])
 
@@ -91,7 +91,12 @@ function displayTheTeam() {
       Intern();
     } else {
       console.log("arll done writing team")
-      fs.writeFile(pathOutPut, makePage(emp), function (err) {
+      if (!fs.existsSync(OUTPUT_DIR)) {
+          fs.mkdirSync(OUTPUT_DIR)
+       }
+//askBCS ticket 67963 assisted
+
+      fs.writeFileSync(pathOutPut, makePage(emp), function (err) {
         if (err) {
           return
         } else
