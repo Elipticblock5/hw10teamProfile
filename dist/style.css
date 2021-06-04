@@ -1,19 +1,19 @@
 body {
-  background-color: rgb(195, 193, 193);
+  background-color: rgb(1, 48, 56);
 }
 
 .jumbotron {
   padding: 2rem 1rem;
   margin-bottom: 2rem;
   background-color: rgb(134, 56, 56);
-  border-radius: .3rem;
-  color: rgb(216, 205, 205);
+  border-radius: 0.5rem;
+  color: rgb(168, 129, 129);
 }
 
 .card-header {
-  padding: .75rem 1.25rem;
+  padding: 0.75rem 1.25rem;
   margin-bottom: 0;
-  background-color: rgb(67, 87, 117);
-  border-bottom: 1px solid rgba(15, 1, 1, 0.125);
-  color: rgb(216, 205, 205);
+  background-color: rgb(25, 48, 82);
+  border-bottom: 5px solid rgba(15, 1, 1, 0.125);
+  color: rgb(114, 84, 84);
 }
